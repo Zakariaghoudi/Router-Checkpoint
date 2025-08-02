@@ -1,3 +1,4 @@
+import './Filter.css';
 import  { useState } from 'react';
 
 function Filter({ onFilterChange }) {

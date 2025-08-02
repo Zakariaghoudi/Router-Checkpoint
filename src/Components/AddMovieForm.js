@@ -1,17 +1,18 @@
-import  { useState } from 'react';
+import "./AddMovieForm.css";
+import { useState } from "react";
 
 function AddMovieForm({ onAddMovie }) {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [posterURL, setPosterURL] = useState('');
-  const [rating, setRating] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [posterURL, setPosterURL] = useState("");
+  const [rating, setRating] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
 
     // Basic validation
     if (!title || !description || !posterURL || !rating) {
-      alert('Please fill in all fields!');
+      alert("Please fill in all fields!");
       return;
     }
 
@@ -26,10 +27,10 @@ function AddMovieForm({ onAddMovie }) {
     onAddMovie(newMovie); // Pass the new movie to the parent component
 
     // Clear form fields
-    setTitle('');
-    setDescription('');
-    setPosterURL('');
-    setRating('');
+    setTitle("");
+    setDescription("");
+    setPosterURL("");
+    setRating("");
   };
 
   return (
@@ -62,8 +63,8 @@ function AddMovieForm({ onAddMovie }) {
         value={rating}
         onChange={(e) => {
           let value = e.target.value;
-          if (value === '') {
-            setRating('');
+          if (value === "") {
+            setRating("");
           } else {
             value = parseFloat(value);
             if (!isNaN(value) && value >= 0 && value <= 5) {
